@@ -1,0 +1,42 @@
+{
+  "edulis": {
+    "swedish": "Karl-Johan",
+    "latin": "Boletus edulis",
+    "english": "Stone mushroom"
+  },
+  "lutescens": {
+    "swedish": "Rödgul trumpetsvamp",
+    "latin": "Craterellus lutescens",
+    "english": "Yellowfoot"
+  },
+  "semilanceata": {
+    "swedish": "Toppslätskivling",
+    "latin": "Psilocybe semilanceata",
+    "english": "Liberty cap"
+  },
+  "sylvaticus": {
+    "swedish": "Skogschampinjon",
+    "latin": "Agaricus sylvaticus",
+    "english": "Wood mushroom"
+  },
+  "tubaeformis": {
+    "swedish": "Trattkantarell",
+    "latin": "Cantharellus tubaeformis",
+    "english": "Yellow chanterelle"
+  },
+  "cibarius": {
+    "swedish": "Kantarell",
+    "latin": "Cantharellus cibarius",
+    "english": "Chanterelle"
+  },
+  "luteus": {
+    "swedish": "smörsopp",
+    "latin": "Suillus luteus",
+    "english": "Slippery jack"
+  },
+  "ovinus": {
+    "swedish": "Fårticka",
+    "latin": "Albatrellus ovinus",
+    "english": "Sheep polypore"
+  }
+}
