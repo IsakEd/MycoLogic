@@ -13,7 +13,6 @@ def weather_from_coordinates(lon, lat, start_date, end_date):
   try:
     response = re.get(endpoint)
     data = json.loads(response.text)
-    print(data)
     df = pd.DataFrame(data)
 
   except:
@@ -37,7 +36,6 @@ def weather_from_coordinates(lon, lat, start_date, end_date):
       time.sleep(60+1)
       response = re.get(endpoint)
       data = json.loads(response.text)
-      df = pd.DataFrame(data)
       return pd.DataFrame()
 
 

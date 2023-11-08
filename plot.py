@@ -10,7 +10,7 @@ def weather_plot(merged, current_weather_stats, n_days, name):
 
   swe_name = mushrooms[name]['swedish']
 
-  x = np.linspace(-10, 30, 100)
+  x = np.linspace(-5, 30, 100)
 
   fig, axs = plt.subplots(2, 2)
 

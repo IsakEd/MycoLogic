@@ -38,5 +38,15 @@
     "swedish": "Fårticka",
     "latin": "Albatrellus ovinus",
     "english": "Sheep polypore"
+  },
+  "comatus": {
+    "swedish": "Fjällig bläcksvamp",
+    "latin": "Coprinus comatus",
+    "english": "Shaggy ink cap"
+  },
+  "muscaria": {
+    "swedish": "Röd Flugsvamp",
+    "latin": "Amanita muscaria",
+    "english": "Fly agaric"
   }
 }

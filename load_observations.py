@@ -13,7 +13,11 @@ def load_observations(file):
         pd.DataFrame: The cleaned DataFrame.
     """
 
-    df = pd.read_csv(file, delimiter=';', engine='python', on_bad_lines="skip", quoting=3)
+    try:
+        df = pd.read_csv(file, delimiter=';', engine='python', on_bad_lines="skip", quoting=3)
+    except:
+        return pd.DataFrame()
+        
     df = df.drop(columns=['TaxonId', 'SortOrder', 'Scientific', 'Name',
     'Source', 'Observer', 'NotRedisc', 'Removed', 'Quantity', 'Accuracy'])
 
