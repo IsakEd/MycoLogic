@@ -1,0 +1,14 @@
+1: get key from OpenCopernicus integration
+
+2: Batch download of location screenshots.     
+def get_scrn(lat, lon, bands, date): None
+
+3: Generate training data locations
+
+4: Iterate p2
+
+5: pre-process images to use OH-encoding
+
+6: build clf-array and gridCV to find optima
+
+7: 

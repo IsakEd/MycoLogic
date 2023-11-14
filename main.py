@@ -4,6 +4,7 @@ from weather_from_observations import weather_from_observations
 from get_current_weather_metrics import get_current_weather_metrics
 from load_observations import load_observations
 from plot import weather_plot
+import os
 import ast
 
 
@@ -11,19 +12,17 @@ import ast
 n_days = 7
 your_lat = 58.4
 your_lon = 15.6
-latin_last_name = "lutescens"
-generate_weather = True
+latin_last_name = "edulis"
 do_plot = True
 ###############################
 
 
 df = load_observations(f'observations/{latin_last_name}.csv')
-
 if df.empty:
   print('Error: Could not load observations.')
   exit()
 
-if generate_weather:
+if not latin_last_name+'.csv' in os.listdir('weather'):
   weather = weather_from_observations(df, n_days, latin_last_name)
   weather.to_csv(f'weather/{latin_last_name}.csv', index=False)
 
