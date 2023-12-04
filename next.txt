@@ -1,4 +1,4 @@
-1: get key from OpenCopernicus integration
+1: get key from OpenCopernicus integration # DONE
 
 2: Batch download of location screenshots.     
 def get_scrn(lat, lon, bands, date): None

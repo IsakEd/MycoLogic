@@ -1,7 +1,7 @@
 import pandas as pd
 from dateutil import parser
 
-def load_observations(file):
+def load_observations(file, columns: list = []):
 
     """
     Load mushroom observation data.
@@ -18,12 +18,13 @@ def load_observations(file):
     except:
         return pd.DataFrame()
         
-    df = df.drop(columns=['TaxonId', 'SortOrder', 'Scientific', 'Name',
-    'Source', 'Observer', 'NotRedisc', 'Removed', 'Quantity', 'Accuracy'])
+    if columns:
+        df = df[columns]
 
-    df['Time'] = df['Time'].apply(lambda x: parser.parse(x))
-    # Strip times from 'Time' column
-    df['Date'] = df['Time'].apply(lambda x: x.date())
+    if 'Date' not in df.columns:
+        df['Time'] = df['Time'].apply(lambda x: parser.parse(x))
+        # Strip times from 'Time' column
+        df['Date'] = df['Time'].apply(lambda x: x.date())
 
 
     return df

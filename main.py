@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
-from weather_from_observations import weather_from_observations
-from get_current_weather_metrics import get_current_weather_metrics
-from load_observations import load_observations
+from lib.weather_from_observations import weather_from_observations
+from lib.get_current_weather_metrics import get_current_weather_metrics
+from lib.load_observations import load_observations
 from plot import weather_plot
 import os
 import ast
@@ -12,7 +12,7 @@ import ast
 n_days = 7
 your_lat = 58.4
 your_lon = 15.6
-latin_last_name = "edulis"
+latin_last_name = "crispa"
 do_plot = True
 ###############################
 
@@ -29,6 +29,29 @@ if not latin_last_name+'.csv' in os.listdir('weather'):
 weather = pd.read_csv(f'weather/{latin_last_name}.csv')
 
 merged = pd.merge(df, weather, left_index=True, right_index=True)
+
+def get_merged_data(observations, weather):
+  merged = pd.merge(df, weather, left_index=True, right_index=True)
+
+  indices_to_remove = []
+
+  for index, row in merged.iterrows():
+    if any(["None" in str(x) for x in row]):
+      indices_to_remove.append(index)
+  
+    merged = merged.drop(indices_to_remove)
+
+  weather_stats = {
+    'temp_max': max(ast.literal_eval(merged['temperature_2m_max'])),
+    'temp_min': min(ast.literal_eval(merged['temperature_2m_min'])),
+    'temp_mean': np.mean(ast.literal_eval(merged['temperature_2m_mean'])),
+    'avg_daily_rain': np.mean(ast.literal_eval(merged['rain_sum']))
+  }
+
+  for key in weather_stats:
+    merged[key] = weather_stats[key]
+
+  return merged
 
 temp_wk_max_values = []
 temp_wk_min_values = []

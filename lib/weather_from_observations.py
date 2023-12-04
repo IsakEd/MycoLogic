@@ -1,4 +1,4 @@
-from weather_from_coordinates import weather_from_coordinates
+from lib.weather_from_coordinates import weather_from_coordinates
 import pandas as pd
 
 def weather_from_observations(observations_df, n_days: int, mushroom_name: str):
